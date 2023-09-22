@@ -33,7 +33,7 @@ program
 
 program.parse();
 const options = program.opts();
-console.log("options :>> ", options);
+// console.log("options :>> ", options);
 invokeAction(options);
 
 // # Получаем и выводим весь список контактов в виде таблицы (console.table)
