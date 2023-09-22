@@ -1,5 +1,5 @@
 {
-  "name": "goit-node-hw-01-cliapp",
+  "name": "goit-node-hw",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,5 +14,8 @@
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "nanoid": "^5.0.1"
   }
 }
