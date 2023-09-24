@@ -40,3 +40,18 @@ export async function addContact(name, email, phone) {
   await updateContacts(contacts);
   return newContact;
 }
+
+export const updateContact = async (contactId, name, email, phone) => {
+  // const { name, email, phone } = body;
+  let index = -1;
+  const contacts = await listContacts();
+  console.log("contacts :>> ", contacts);
+  const updateContacts = contacts.map(
+    (contact) =>
+      (contact = contact.id === contactId ? { ...{ contactId, name, email, phone } } : {})
+  );
+  if (index === -1) return null;
+  console.log("updateContacts :>> ", updateContacts);
+  // await updateContacts(updateContacts);
+  return results;
+};
