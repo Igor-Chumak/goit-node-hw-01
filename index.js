@@ -20,7 +20,7 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
       console.log("Remove contact");
       return console.table(removeContact);
     case "update":
-      const updateContact = await contactOperation.updateContact(id, body);
+      const updateContact = await contactOperation.updateContact(id, name, email, phone);
       console.log("Update contact");
       return console.table(updateContact);
     default:
@@ -53,4 +53,4 @@ invokeAction(options);
 // node index.js --action remove --id qdggE76Jtbfd9eWJHrssH
 
 // # Обновляем  контакт и выводим в консоль обновленный контакт или null, если контакта с таким id не существует.
-// node index.js --action update --id qdggE76Jtbfd9eWJHrssH
+// node index.js --action update --id qdggE76Jtbfd9eWJHrssH --name Mango --email mango@gmail.com --phone 322-22-23
