@@ -42,11 +42,11 @@ export async function addContact(name, email, phone) {
 }
 
 export const updateContact = async (contactId, name, email, phone) => {
-  // const { name, email, phone } = body;
   const contacts = await listContacts();
   const index = contacts.findIndex((contact) => contact.id === contactId);
   if (index === -1) return null;
   contacts[index] = { ...contacts[index], ...{ name, email, phone } };
   console.log("updatedContacts :>> ", contacts);
+  await updateContacts(updatedContacts);
   return contacts[index];
 };
