@@ -43,19 +43,10 @@ export async function addContact(name, email, phone) {
 
 export const updateContact = async (contactId, name, email, phone) => {
   // const { name, email, phone } = body;
-  // let index = -1;
   const contacts = await listContacts();
   const index = contacts.findIndex((contact) => contact.id === contactId);
   if (index === -1) return null;
   contacts[index] = { ...contacts[index], ...{ name, email, phone } };
-  // console.log("contacts :>> ", contacts);
-  // const updatedContacts = contacts.map(
-  //   (contact) =>
-  //     (contact = contact.id === contactId ? { ...contact, ...{ name, email, phone } } : contact)
-  // );
   console.log("updatedContacts :>> ", contacts);
-  // console.log("updatedContacts :>> ", updatedContacts);
-  // await updateContacts(updatedContacts);
-  // return updatedContacts;
   return contacts[index];
 };
